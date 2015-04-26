@@ -1,0 +1,17 @@
+<resources>
+	<string name="app_name">新汉字宫</string>
+	<string name="init_decoders">初始化播放器...</string>
+	<string name="video_layout_loading">正在缓冲...</string>
+	<string name="title_back_text">返回</string>
+	<string name="once_press_quit">再按一次退出</string>
+	<string name="input_custom_dir">请输入定制目录</string>
+	<string name="about">关于</string>
+	<string name="text_version_code">当前版本&#160;v&#160;%s</string>
+	<string name="unknow_version_name">未知版本</string>
+	<string name="save">保存</string>
+	<string name="cancel">取消</string>
+	<string name="rename">重命名</string>
+	<string name="delete">删除</string>
+	<string name="ensure">确定</string>
+	<string name="toast">提示</string>
+</resources>

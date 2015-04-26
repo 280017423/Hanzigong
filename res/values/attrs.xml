@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <!-- Defines the custom XML attributes supported for a HorizontalListView -->
+    <declare-styleable name="HorizontalListView">
+        <attr name="dividerWidth" format="dimension" />
+        <attr name="android:divider" />
+        <attr name="android:requiresFadingEdge" />
+        <attr name="android:fadingEdgeLength" />
+    </declare-styleable>
+    
+    <declare-styleable name="RoundCornerImageView">
+        <attr name="roundWidth" format="dimension" />
+        <attr name="roundHeight" format="dimension" />
+        <attr name="roundLeftTop" format="boolean" />
+        <attr name="roundLeftBottom" format="boolean" />
+        <attr name="roundRightTop" format="boolean" />
+        <attr name="roundRightBottom" format="boolean" />
+    </declare-styleable>
+
+</resources>

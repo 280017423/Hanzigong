@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical" >
+	<io.vov.vitamio.widget.VideoView
+		android:id="@+id/surface_view"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:layout_centerHorizontal="true"
+		android:layout_centerVertical="true" />
+	<TextView
+		android:id="@+id/tv_video_title"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:background="#363636"
+		android:gravity="center"
+		android:paddingBottom="5dp"
+		android:paddingTop="5dp"
+		android:textColor="@color/white"
+		android:textSize="20sp" />
+	<FrameLayout
+		android:id="@+id/operation_volume_brightness"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_centerInParent="true"
+		android:background="#00000000"
+		android:orientation="horizontal"
+		android:padding="0dip"
+		android:visibility="invisible" >
+		<ImageView
+			android:id="@+id/operation_bg"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:src="@drawable/video_volumn_bg" />
+		<FrameLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="bottom|center_horizontal"
+			android:paddingBottom="25dip" >
+			<ImageView
+				android:id="@+id/operation_full"
+				android:layout_width="94dip"
+				android:layout_height="wrap_content"
+				android:layout_gravity="left"
+				android:contentDescription="@null"
+				android:src="@drawable/video_num_bg" />
+			<ImageView
+				android:id="@+id/operation_percent"
+				android:layout_width="0dip"
+				android:layout_height="wrap_content"
+				android:layout_gravity="left"
+				android:contentDescription="@null"
+				android:scaleType="matrix"
+				android:src="@drawable/video_num_front" />
+		</FrameLayout>
+	</FrameLayout>
+	<LinearLayout
+		android:id="@+id/ll_left_view"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentLeft="true"
+		android:layout_centerVertical="true"
+		android:orientation="vertical"
+		android:padding="10dp" >
+		<ImageButton
+			android:id="@+id/ibtn_mulu"
+			android:layout_width="60dp"
+			android:layout_height="60dp"
+			android:background="@drawable/c"
+			android:contentDescription="@null"
+			android:onClick="onClick" />
+		<ImageButton
+			android:id="@+id/ibtn_piantou"
+			android:layout_width="60dp"
+			android:layout_height="60dp"
+			android:layout_marginTop="10dp"
+			android:background="@drawable/t"
+			android:contentDescription="@null"
+			android:onClick="onClick" />
+		<ImageButton
+			android:id="@+id/ibtn_pianwei"
+			android:layout_width="60dp"
+			android:layout_height="60dp"
+			android:layout_marginTop="10dp"
+			android:background="@drawable/w"
+			android:contentDescription="@null"
+			android:onClick="onClick" />
+		<ImageButton
+			android:id="@+id/ibtn_meijizimu"
+			android:layout_width="60dp"
+			android:layout_height="60dp"
+			android:layout_marginTop="10dp"
+			android:background="@drawable/g"
+			android:contentDescription="@null"
+			android:onClick="onClick" />
+	</LinearLayout>
+	<LinearLayout
+		android:id="@+id/ll_right_view"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentRight="true"
+		android:layout_centerVertical="true"
+		android:orientation="vertical"
+		android:padding="10dp" >
+		<ImageButton
+			android:id="@+id/ibtn_quanwenzimu"
+			android:layout_width="60dp"
+			android:layout_height="60dp"
+			android:background="@drawable/l"
+			android:contentDescription="@null"
+			android:onClick="onClick" />
+		<ImageButton
+			android:id="@+id/ibtn_jianjie"
+			android:layout_width="60dp"
+			android:layout_height="60dp"
+			android:layout_marginTop="10dp"
+			android:background="@drawable/s"
+			android:contentDescription="@null"
+			android:onClick="onClick" />
+		<ImageButton
+			android:id="@+id/ibtn_guatu"
+			android:layout_width="60dp"
+			android:layout_height="60dp"
+			android:layout_marginTop="10dp"
+			android:background="@drawable/y"
+			android:contentDescription="@null"
+			android:onClick="onClick" />
+	</LinearLayout>
+</RelativeLayout>

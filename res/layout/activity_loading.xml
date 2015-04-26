@@ -1,0 +1,23 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:background="@color/white" >
+	<ImageView
+		android:id="@+id/iv_loading_bg"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_centerHorizontal="true"
+		android:layout_marginTop="100dp"
+		android:contentDescription="@null"
+		android:src="@drawable/loading_bg" />
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/iv_loading_bg"
+		android:layout_centerHorizontal="true"
+		android:contentDescription="@null"
+		android:text="新汉字宫"
+		android:textColor="#999999"
+		android:textSize="40sp" />
+</RelativeLayout>

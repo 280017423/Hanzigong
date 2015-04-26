@@ -1,0 +1,21 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:background="@color/login_bg" >
+	<GridView
+		android:id="@+id/gv_root_folder"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:cacheColorHint="@android:color/transparent"
+		android:clickable="false"
+		android:fadingEdge="none"
+		android:gravity="center"
+		android:horizontalSpacing="10dp"
+		android:listSelector="@android:color/transparent"
+		android:numColumns="6"
+		android:padding="10dp"
+		android:scrollbars="none"
+		android:stretchMode="columnWidth"
+		android:verticalSpacing="10dp" />
+</RelativeLayout>

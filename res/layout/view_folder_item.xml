@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:background="@drawable/folder_selected_shape"
+	android:orientation="vertical" >
+	<com.zshq.hanzigong.widget.RoundCornerImageView
+		xmlns:app1="http://schemas.android.com/apk/res-auto"
+		android:id="@+id/iv_folder_img"
+		android:layout_width="65dp"
+		android:layout_height="65dp"
+		android:layout_centerInParent="true"
+		android:contentDescription="@null"
+		android:focusable="false"
+		android:scaleType="fitXY"
+		app1:roundHeight="5dp"
+		app1:roundWidth="5dp" />
+	<TextView
+		android:id="@+id/tv_folder_name"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_alignBottom="@id/iv_folder_img"
+		android:layout_centerHorizontal="true"
+		android:ellipsize="end"
+		android:gravity="center"
+		android:padding="5dp"
+		android:singleLine="true"
+		android:textColor="@color/white"
+		android:textSize="14sp" />
+</RelativeLayout>
