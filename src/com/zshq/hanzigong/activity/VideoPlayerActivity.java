@@ -136,11 +136,11 @@ public class VideoPlayerActivity extends ActivityBase implements OnCompletionLis
 
 			@Override
 			public void onClick(View v) {
-				mToatstPop.dissmiss();
 				if (mPosition <= 0) {
 					toast("没有上一集了");
 					return;
 				}
+				mToatstPop.dissmiss();
 				mPosition--;
 				play(mFileList.get(mPosition));
 			}
@@ -149,11 +149,11 @@ public class VideoPlayerActivity extends ActivityBase implements OnCompletionLis
 
 			@Override
 			public void onClick(View v) {
-				mToatstPop.dissmiss();
 				if (mPosition >= mFileList.size()) {
 					toast("没有下一集了");
 					return;
 				}
+				mToatstPop.dissmiss();
 				mPosition++;
 				play(mFileList.get(mPosition));
 			}
@@ -454,7 +454,7 @@ public class VideoPlayerActivity extends ActivityBase implements OnCompletionLis
 	}
 
 	private void playHeaderFooter(String name) {
-		if (!"header.flv".equals(name)) {
+		if ("header.flv".equals(name)) {
 			mPosition = -1;
 		} else if ("footer.flv".equals(name)) {
 			mPosition = mFileList.size();

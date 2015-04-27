@@ -32,10 +32,6 @@ public class FileUtil {
 	private static final long SIZE_KB = 1024;
 	private static final long SIZE_MB = 1048576;
 	private static final long SIZE_GB = 1073741824;
-	private static final String videoDir = "/mnt/usbotg/可移动磁盘/新汉字宫/w/m";
-	// private static final String thumbnailDir = "/mnt/sdcard2/thumbnail";
-
-	private static final String thumbnailDir = "/mnt/usbotg/可移动磁盘/新汉字宫/w/thumbnail";
 
 	/**
 	 * 
@@ -46,7 +42,8 @@ public class FileUtil {
 	 */
 	public static File getResDir(Context context) {
 		// File downloadFile = new File("/mnt/sdcard2");
-		File downloadFile = new File(videoDir);
+		File downloadFile = new File(
+				SharedPreferenceUtil.getStringValueByKey(context, "config_file", "config_file_dir") + "m");
 		if (!downloadFile.exists()) {
 			downloadFile.mkdirs();
 		}
@@ -61,7 +58,8 @@ public class FileUtil {
 	 * @return File 本地资源目录
 	 */
 	public static File[] getThumbnails(final Context context) {
-		File thumbnailFile = new File(thumbnailDir);
+		File thumbnailFile = new File(SharedPreferenceUtil.getStringValueByKey(context, "config_file",
+				"config_file_dir") + "thumbnail");
 		if (!thumbnailFile.exists()) {
 			return null;
 		}
