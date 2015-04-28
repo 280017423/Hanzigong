@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
 	package="com.zshq.hanzigong"
-	android:versionCode="1"
-	android:versionName="1.0" >
+	android:versionCode="10100"
+	android:versionName="1.1.0" >
 	<uses-sdk
 		android:minSdkVersion="14"
 		android:targetSdkVersion="19" />
@@ -28,6 +28,12 @@
 		android:label="@string/app_name"
 		android:screenOrientation="landscape"
 		android:theme="@style/AppTheme" >
+		<meta-data
+			android:name="UMENG_APPKEY"
+			android:value="553f9e8167e58e0dc0005af8" />
+		<meta-data
+			android:name="UMENG_CHANNEL"
+			android:value="Channel ID" />
 		<activity
 			android:name=".activity.LoadingActivity"
 			android:label="@string/app_name"
@@ -55,5 +61,13 @@
 			android:screenOrientation="landscape"
 			android:theme="@android:style/Theme.NoTitleBar"
 			android:windowSoftInputMode="stateAlwaysHidden" />
+		<service
+			android:name="com.umeng.update.net.DownloadingService"
+			android:process=":DownloadingService" >
+		</service>
+		<activity
+			android:name="com.umeng.update.UpdateDialogActivity"
+			android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+		</activity>
 	</application>
 </manifest>

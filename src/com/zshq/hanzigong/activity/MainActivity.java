@@ -15,6 +15,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
 
+import com.umeng.update.UmengUpdateAgent;
 import com.zshq.hanzigong.R;
 import com.zshq.hanzigong.adapter.FolderAdapter;
 import com.zshq.hanzigong.util.FileUtil;
@@ -39,6 +40,8 @@ public class MainActivity extends ActivityBase implements OnClickListener, OnIte
 	}
 
 	private void initVariables() {
+		UmengUpdateAgent.setUpdateOnlyWifi(false);
+		UmengUpdateAgent.update(this);
 		mFileList = new ArrayList<File>();
 		mResDir = FileUtil.getResDir(this);
 		mCurrentFile = mResDir;
