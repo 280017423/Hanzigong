@@ -40,7 +40,6 @@ import android.widget.Toast;
 import com.zshq.hanzigong.R;
 import com.zshq.hanzigong.adapter.FolderAdapter;
 import com.zshq.hanzigong.util.FileUtil;
-import com.zshq.hanzigong.util.LibsChecker;
 import com.zshq.hanzigong.util.PopWindowUtil;
 import com.zshq.hanzigong.util.StringUtil;
 import com.zshq.hanzigong.util.UIUtil;
@@ -170,9 +169,6 @@ public class VideoPlayerActivity extends ActivityBase implements OnCompletionLis
 
 	private void initVariables() {
 		mLoadingUpView = new LoadingUpView(this);
-		if (!LibsChecker.checkVitamioLibs(this, R.string.init_decoders)) {
-			return;
-		}
 		mGestureDetector = new GestureDetector(this, new MyGestureListener());
 		mAudioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 		mMaxVolume = mAudioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);

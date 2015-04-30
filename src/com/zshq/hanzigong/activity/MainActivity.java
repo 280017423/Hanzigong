@@ -19,6 +19,7 @@ import com.umeng.update.UmengUpdateAgent;
 import com.zshq.hanzigong.R;
 import com.zshq.hanzigong.adapter.FolderAdapter;
 import com.zshq.hanzigong.util.FileUtil;
+import com.zshq.hanzigong.util.LibsChecker;
 
 public class MainActivity extends ActivityBase implements OnClickListener, OnItemClickListener {
 
@@ -40,6 +41,9 @@ public class MainActivity extends ActivityBase implements OnClickListener, OnIte
 	}
 
 	private void initVariables() {
+		if (!LibsChecker.checkVitamioLibs(this, R.string.init_decoders)) {
+			return;
+		}
 		UmengUpdateAgent.setUpdateOnlyWifi(false);
 		UmengUpdateAgent.update(this);
 		mFileList = new ArrayList<File>();

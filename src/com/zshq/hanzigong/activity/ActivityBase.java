@@ -3,16 +3,13 @@ package com.zshq.hanzigong.activity;
 import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.zshq.hanzigong.listener.IDialogProtocol;
-import com.zshq.hanzigong.util.ConstantSet;
 import com.zshq.hanzigong.util.DialogManager;
-import com.zshq.hanzigong.util.SharedPreferenceUtil;
 import com.zshq.hanzigong.util.StringUtil;
 import com.zshq.hanzigong.widget.CustomDialog.Builder;
 import com.zshq.hanzigong.widget.LoadingUpView;
@@ -65,8 +62,15 @@ public class ActivityBase extends Activity implements IDialogProtocol {
 	}
 
 	protected boolean showLoadingUpView(LoadingUpView loadingUpView) {
+		return showLoadingUpView(loadingUpView, "");
+	}
+
+	protected boolean showLoadingUpView(LoadingUpView loadingUpView, String info) {
 		if (loadingUpView != null && !loadingUpView.isShowing()) {
-			loadingUpView.showPopup();
+			if (null == info) {
+				info = "";
+			}
+			loadingUpView.showPopup(info);
 			return true;
 		}
 		return false;

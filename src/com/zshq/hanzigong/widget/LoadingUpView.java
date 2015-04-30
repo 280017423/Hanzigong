@@ -32,7 +32,6 @@ import com.zshq.hanzigong.util.StringUtil;
  * @version 2012-11-1 下午1:31:10 xu.xb
  */
 public class LoadingUpView {
-	private static final String TAG = "EvtLoadingUpView";
 	// 限制用户操作时间
 	private static final int Default_DialogTimeOut = 300;
 	private static final int SRART_ANIM = 3;

@@ -87,14 +87,6 @@
 			android:background="@drawable/w"
 			android:contentDescription="@null"
 			android:onClick="onClick" />
-		<ImageButton
-			android:id="@+id/ibtn_meijizimu"
-			android:layout_width="60dp"
-			android:layout_height="60dp"
-			android:layout_marginTop="10dp"
-			android:background="@drawable/g"
-			android:contentDescription="@null"
-			android:onClick="onClick" />
 	</LinearLayout>
 	<LinearLayout
 		android:id="@+id/ll_right_view"
@@ -120,11 +112,11 @@
 			android:contentDescription="@null"
 			android:onClick="onClick" />
 		<ImageButton
-			android:id="@+id/ibtn_guatu"
+			android:id="@+id/ibtn_meijizimu"
 			android:layout_width="60dp"
 			android:layout_height="60dp"
 			android:layout_marginTop="10dp"
-			android:background="@drawable/y"
+			android:background="@drawable/g"
 			android:contentDescription="@null"
 			android:onClick="onClick" />
 	</LinearLayout>
