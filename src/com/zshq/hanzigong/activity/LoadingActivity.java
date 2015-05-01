@@ -17,6 +17,7 @@ import android.view.KeyEvent;
 import android.view.View;
 
 import com.zshq.hanzigong.R;
+import com.zshq.hanzigong.util.FileUtil;
 import com.zshq.hanzigong.util.SharedPreferenceUtil;
 import com.zshq.hanzigong.util.UIUtil;
 
@@ -48,7 +49,7 @@ public class LoadingActivity extends ActivityBase {
 			boolean hasUdisk = false;
 			for (int i = 0; i < dirList.size(); i++) {
 				String dir = dirList.get(i) + "/可移动磁盘/新汉字宫/w/";
-				if (verfyDir(dir)) {
+				if (FileUtil.isFileExist(dir)) {
 					hasUdisk = true;
 					jumpToMain();
 					SharedPreferenceUtil.saveValue(this, "config_file", "config_file_dir", dir);
@@ -59,11 +60,6 @@ public class LoadingActivity extends ActivityBase {
 				finish();
 			}
 		}
-	}
-
-	private boolean verfyDir(String dir) {
-		File file = new File(dir);
-		return file.exists();
 	}
 
 	private void jumpToMain() {
@@ -106,9 +102,7 @@ public class LoadingActivity extends ActivityBase {
 				if (line.contains("fat") || line.contains("fuse")) {
 					String columns[] = line.split(" ");
 					if (columns != null && columns.length > 1) {
-						if (columns[1].contains("usbotg")) {
-							dirList.add(columns[1]);
-						}
+						dirList.add(columns[1]);
 					}
 				}
 			}

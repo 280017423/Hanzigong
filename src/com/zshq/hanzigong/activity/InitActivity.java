@@ -1,7 +1,6 @@
 package com.zshq.hanzigong.activity;
 
 import io.vov.vitamio.Vitamio;
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -16,7 +15,6 @@ public class InitActivity extends ActivityBase {
 	public static final String FROM_ME = "fromVitamioInitActivity";
 	public static final String EXTRA_MSG = "EXTRA_MSG";
 	public static final String EXTRA_FILE = "EXTRA_FILE";
-	private ProgressDialog mPD;
 	private LoadingUpView mLoadingUpView;
 
 	@Override
