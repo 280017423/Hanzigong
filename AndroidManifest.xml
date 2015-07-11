@@ -60,12 +60,12 @@
 			android:screenOrientation="landscape"
 			android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
 		<activity
-			android:name="com.zshq.hanzigong.activity.InitActivity"
-			android:configChanges="orientation|screenSize|smallestScreenSize|keyboard|keyboardHidden|navigation"
-			android:launchMode="singleTop"
-			android:screenOrientation="landscape"
-			android:theme="@android:style/Theme.NoTitleBar"
-			android:windowSoftInputMode="stateAlwaysHidden" />
+            android:name="io.vov.vitamio.activity.InitActivity"
+            android:configChanges="orientation|screenSize|smallestScreenSize|keyboard|keyboardHidden"
+            android:launchMode="singleTop"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:windowSoftInputMode="stateAlwaysHidden" />
 		<service
 			android:name="com.umeng.update.net.DownloadingService"
 			android:process=":DownloadingService" >

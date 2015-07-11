@@ -38,7 +38,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.zshq.hanzigong.R;
-import com.zshq.hanzigong.adapter.FolderAdapter;
+import com.zshq.hanzigong.adapter.VideoAdapter;
 import com.zshq.hanzigong.util.FileUtil;
 import com.zshq.hanzigong.util.PopWindowUtil;
 import com.zshq.hanzigong.util.StringUtil;
@@ -71,6 +71,7 @@ public class VideoPlayerActivity extends ActivityBase implements OnCompletionLis
 	private PopWindowUtil mToatstPop;
 	private View mLeftView;
 	private View mRightView;
+	private File mResDir;
 
 	@Override
 	public void onCreate(Bundle bundle) {
@@ -99,7 +100,7 @@ public class VideoPlayerActivity extends ActivityBase implements OnCompletionLis
 		View popView = View.inflate(this, R.layout.view_mulu_pop, null);
 		mMuluPop = new PopWindowUtil(popView, null);
 		GridView mGvRootFolder = (GridView) popView.findViewById(R.id.gv_root_folder);
-		FolderAdapter mFilAdapter = new FolderAdapter(this, mFileList, mGvRootFolder);
+		VideoAdapter mFilAdapter = new VideoAdapter(this, mFileList, mGvRootFolder);
 		mFilAdapter.setColumns(6);
 		mGvRootFolder.setOnItemClickListener(new OnItemClickListener() {
 
@@ -114,6 +115,7 @@ public class VideoPlayerActivity extends ActivityBase implements OnCompletionLis
 	}
 
 	private void initToastPop() {
+		mResDir = FileUtil.getResDir(this);
 		View popView = View.inflate(this, R.layout.view_toast, null);
 		mToatstPop = new PopWindowUtil(popView, null);
 		View replay = popView.findViewById(R.id.replay);
@@ -125,9 +127,9 @@ public class VideoPlayerActivity extends ActivityBase implements OnCompletionLis
 			public void onClick(View v) {
 				mToatstPop.dissmiss();
 				if (mPosition == -1) {
-					play(new File(FileUtil.getResDir(VideoPlayerActivity.this), "header.flv"));
+					play(new File(mResDir, "header.flv"));
 				} else if (mPosition == mFileList.size()) {
-					play(new File(FileUtil.getResDir(VideoPlayerActivity.this), "footer.flv"));
+					play(new File(mResDir, "footer.flv"));
 				}
 			}
 		});
@@ -421,27 +423,12 @@ public class VideoPlayerActivity extends ActivityBase implements OnCompletionLis
 				break;
 			case R.id.ibtn_jianjie:
 				showWebPop("file:///android_asset/dz.html");
-				// Intent jianjieIntent = new Intent(VideoPlayerActivity.this,
-				// WebActivity.class);
-				// jianjieIntent.putExtra("path",
-				// "file:///android_asset/dz.html");
-				// startActivity(jianjieIntent);
 				break;
 			case R.id.ibtn_quanwenzimu:
 				showWebPop("file:///android_asset/analects.html");
-				// Intent quanwenIntent = new Intent(VideoPlayerActivity.this,
-				// WebActivity.class);
-				// quanwenIntent.putExtra("path",
-				// "file:///android_asset/analects.html");
-				// startActivity(quanwenIntent);
 				break;
 			case R.id.ibtn_meijizimu:
 				showWebPop("file:///android_asset/gc.html");
-				// Intent shengziIntent = new Intent(VideoPlayerActivity.this,
-				// WebActivity.class);
-				// shengziIntent.putExtra("path",
-				// "file:///android_asset/gc.html");
-				// startActivity(shengziIntent);
 				break;
 
 			default:
@@ -455,6 +442,6 @@ public class VideoPlayerActivity extends ActivityBase implements OnCompletionLis
 		} else if ("footer.flv".equals(name)) {
 			mPosition = mFileList.size();
 		}
-		play(new File(FileUtil.getResDir(this), name));
+		play(new File(mResDir, name));
 	}
 }

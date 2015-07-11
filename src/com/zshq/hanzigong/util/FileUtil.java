@@ -41,9 +41,8 @@ public class FileUtil {
 	 * @return File 本地资源目录
 	 */
 	public static File getResDir(Context context) {
-		// File downloadFile = new File("/mnt/sdcard2");
 		File downloadFile = new File(
-				SharedPreferenceUtil.getStringValueByKey(context, "config_file", "config_file_dir") + "m");
+				SharedPreferenceUtil.getStringValueByKey(context, "config_file", "config_file_dir"));
 		if (!downloadFile.exists()) {
 			downloadFile.mkdirs();
 		}

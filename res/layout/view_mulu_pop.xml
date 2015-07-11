@@ -4,7 +4,7 @@
 	android:layout_height="match_parent"
 	android:background="#99000000"
 	android:gravity="center"
-	android:padding="50dp" >
+	android:padding="20dp" >
 	<GridView
 		android:id="@+id/gv_root_folder"
 		android:layout_width="fill_parent"

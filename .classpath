@@ -8,5 +8,6 @@
 	<classpathentry kind="lib" path="libs/umeng-update-v2.6.0.1.jar"/>
 	<classpathentry kind="lib" path="libs/android-support-v4.jar"/>
 	<classpathentry kind="lib" path="libs/bugly_1.1.7_release.jar"/>
+	<classpathentry kind="lib" path="libs/vitamiolibrary.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

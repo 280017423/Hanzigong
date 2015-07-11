@@ -6,6 +6,6 @@
 		</shape></item>
 	<item android:state_pressed="false"><shape>
 			<corners android:radius="5dp" />
-			<solid android:color="@color/transparent" />
+			<solid android:color="@android:color/transparent" />
 		</shape></item>
 </selector>

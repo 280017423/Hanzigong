@@ -1,5 +1,7 @@
 package com.zshq.hanzigong.activity;
 
+import io.vov.vitamio.LibsChecker;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -19,7 +21,6 @@ import com.umeng.update.UmengUpdateAgent;
 import com.zshq.hanzigong.R;
 import com.zshq.hanzigong.adapter.FolderAdapter;
 import com.zshq.hanzigong.util.FileUtil;
-import com.zshq.hanzigong.util.LibsChecker;
 
 public class MainActivity extends ActivityBase implements OnClickListener, OnItemClickListener {
 
@@ -41,7 +42,7 @@ public class MainActivity extends ActivityBase implements OnClickListener, OnIte
 	}
 
 	private void initVariables() {
-		if (!LibsChecker.checkVitamioLibs(this, R.string.init_decoders)) {
+		if (!LibsChecker.checkVitamioLibs(this)) {
 			return;
 		}
 		UmengUpdateAgent.setUpdateOnlyWifi(false);
@@ -113,6 +114,11 @@ public class MainActivity extends ActivityBase implements OnClickListener, OnIte
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN) {
+			if (null != mResDir && null != mCurrentFile && !mResDir.getAbsolutePath().equals(mCurrentFile.getAbsolutePath())) {
+				mCurrentFile = mCurrentFile.getParentFile();
+				getFileList();
+				return true;
+			}
 			if ((System.currentTimeMillis() - mExitTime) > 2000) {
 				toast("再按一次退出程序");
 				mExitTime = System.currentTimeMillis();

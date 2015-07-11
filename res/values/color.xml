@@ -26,5 +26,9 @@
     <color name="block_column_3">#ff009939</color>
     <color name="gradient_start_gray">#4c4c4c</color>
     <color name="gradient_end_gray">#333333</color>
+    
+        <color name="transparent">#00000000</color>
+    <color name="mediacontroller_bg_pressed">#ff53c1bd</color>
+    <color name="mediacontroller_bg">#99000000</color>
 
 </resources>

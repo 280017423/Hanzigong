@@ -44,7 +44,7 @@ public class LoadingActivity extends ActivityBase {
 		List<String> dirList = getExternalStorageDirectory();
 		boolean hasUdisk = false;
 		for (int i = 0; i < dirList.size(); i++) {
-			String dir = dirList.get(i) + "/新汉字宫/w/";
+			String dir = dirList.get(i) + "/新汉字宫/";
 			Log.d("bbb", "dir:+ " + dir);
 			if (FileUtil.isFileExist(dir)) {
 				hasUdisk = true;
